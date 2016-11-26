@@ -6,6 +6,7 @@ module.exports = {
   'rules': {
     'bare-strings': false,
     'block-indentation': 2,
-    'link-rel-noopener': true
+    'link-rel-noopener': true,
+    'img-alt-attributes': false
   }
 };
