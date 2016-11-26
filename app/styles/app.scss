@@ -1,3 +1,7 @@
 @import "bootstrap";
 @import "./components/landing-page";
-@import "./components/series";
+@import "./components/question-video";
+
+body {
+  padding-top: 50px;
+}

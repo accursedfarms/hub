@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import youtubeTime from '../../utils/youtube-time';
+
 const {computed, observer, ObjectProxy} = Ember;
 
 export default Ember.Controller.extend({
@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
   playerTimeObserver: observer('player.currentTime', function() {
     this.get('proxiedQuestions').forEach(question => {
-      question.set('isActive', youtubeTime(question.get('time')) > this.get('player.currentTime'));
+      question.set('isActive', question.get('timeInSeconds') > this.get('player.currentTime'));
     });
   }),
 });

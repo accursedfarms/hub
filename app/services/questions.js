@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import rawQuestions from '../fixtures/questions/loader';
 import lunr from "npm:lunr";
+import youtubeTime from '../utils/youtube-time';
 const {computed} = Ember;
 
 export default Ember.Service.extend({
@@ -32,6 +33,7 @@ export default Ember.Service.extend({
       batch.questions.forEach((question, index) => {
         question.batch = batch;
         question.id = batch.publishedAt + index;
+        question.timeInSeconds = youtubeTime(question.time);
         questions.push(question);
       });
     });

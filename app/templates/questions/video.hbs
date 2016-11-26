@@ -1,9 +1,10 @@
-{{ember-youtube ytid='fWRISvgAygU' delegate=this delegate-as="player"}}
-
-{{#each proxiedQuestions as |question|}}
-  <div>
-    {{question.isActive}}
-    {{question.question}}
-    {{question.time}}
-  </div>
-{{/each}}
+<div class="question-video text-center">
+  {{ember-youtube ytid='fWRISvgAygU' delegate=this delegate-as="player"}}
+  <ul class="list-group">
+    {{#each proxiedQuestions as |question|}}
+      <li class="list-group-item {{if question.isActive 'active' 'inactive'}}" role="button" {{action 'seekTo' question.timeInSeconds target=player}}>
+        {{question.question}} <span class="small">({{question.time}})</span>
+      </li>
+    {{/each}}
+  </ul>
+</div>
