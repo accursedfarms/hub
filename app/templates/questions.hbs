@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Questions in searchable form</h1>
+      {{input value=query}}
+    </div>
+    {{#each questions as |question|}}
+      <div>
+        <p>{{question.question}}</p>
+        <a href={{youtube-video question.batch.videoId time=question.time}}>Answer</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+<hr>
