@@ -6,7 +6,7 @@ const {computed} = Ember;
 export default Ember.Service.extend({
   find(query, date) {
     const results = this.get('index').search(query);
-    const questions =this.get('questions');
+    const questions = this.get('questions');
 
     const answers = results.map(result => questions.findBy('id', result.ref));
 
@@ -17,7 +17,7 @@ export default Ember.Service.extend({
     return answers.filter(answer => answer.batch.publishedAt === date);
   },
 
-  questions: computed(function() {
+  questions: computed(() => {
     const questions = [];
 
     rawQuestions.forEach(batch => {
@@ -32,7 +32,7 @@ export default Ember.Service.extend({
   }),
 
   index: computed(function() {
-    const idx = lunr(function () {
+    const idx = lunr(function() {
       this.field('question');
     });
 

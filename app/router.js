@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('news');
-  this.route('series', {path: '/series/:playlist'}, function() {});
+  this.route('series', {path: '/series/:playlist'}, () => {});
   this.route('serieses', {path: '/series'});
   this.route('questions');
 });
