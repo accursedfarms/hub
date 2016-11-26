@@ -4,6 +4,14 @@ import lunr from "npm:lunr";
 const {computed} = Ember;
 
 export default Ember.Service.extend({
+  getObjectForVideo(videoId) {
+    return this.get('questions').find(question => question.batch.videoId === videoId).batch;
+  },
+
+  getQuestionsForVideo(videoId) {
+    return this.get('questions').filter(question => question.batch.videoId === videoId);
+  },
+
   find(query, date) {
     const results = this.get('index').search(query);
     const questions = this.get('questions');

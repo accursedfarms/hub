@@ -1,0 +1,9 @@
+{{ember-youtube ytid='fWRISvgAygU' delegate=this delegate-as="player"}}
+
+{{#each proxiedQuestions as |question|}}
+  <div>
+    {{question.isActive}}
+    {{question.question}}
+    {{question.time}}
+  </div>
+{{/each}}
