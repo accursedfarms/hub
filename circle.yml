@@ -26,7 +26,4 @@ deployment:
       - "ember build --prod"
       - "git clone git@github.com:accursedfarms/accursedfarms.github.io.git ../website"
       - "cp -r ./dist/. ../website"
-      - "cd ../website"
-      - "git add ."
-      - "git commit -m 'build'"
-      - "git push"
+      - "cd ../website && git config user.name 'Martin Morávek' && git config user.email 'moravek.martin@gmail.com' && git add . && git commit -m 'build' && git push"
