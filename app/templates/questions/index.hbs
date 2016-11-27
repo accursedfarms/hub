@@ -10,7 +10,8 @@
         {{question.question}}
       </div>
       <div class="col-md-2 text-right">
-        {{question.batch.publishedAt}}
+        {{moment-format question.batch.publishedAt 'l'}}
+        <i class="glyphicon glyphicon-play-circle"></i>
       </div>
     {{/link-to}}
   {{/each}}

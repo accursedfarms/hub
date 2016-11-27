@@ -18,3 +18,9 @@ body {
   height: 500px;
   margin: 20px auto;
 }
+
+.series-thumbnail {
+  object-fit: cover;
+  width: 450px;
+  height: 200px;
+}
