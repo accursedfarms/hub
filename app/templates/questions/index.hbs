@@ -1,14 +1,17 @@
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">Questions in searchable form</h1>
-    {{input value=query}}
-  </div>
+<h1 class="page-header">Questions in searchable form</h1>
+<div class="form-group">
+  {{input value=query class="form-control input-lg" placeholder="What do you want to look for?"}}
+</div>
 
-  <div class="list-group">
-    {{#each questions as |question|}}
-      {{#link-to 'questions.video' question.batch.videoId (query-params time=question.time) class="list-group-item"}}
+<div class="list-group">
+  {{#each questions as |question|}}
+    {{#link-to 'questions.video' question.batch.videoId (query-params time=question.time autoplay=1) class="list-group-item row question-link"}}
+      <div class="col-md-10">
         {{question.question}}
-      {{/link-to}}
-    {{/each}}
-  </div>
+      </div>
+      <div class="col-md-2 text-right">
+        {{question.batch.publishedAt}}
+      </div>
+    {{/link-to}}
+  {{/each}}
 </div>

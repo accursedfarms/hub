@@ -1,20 +1,10 @@
 import Ember from 'ember';
-import youtubeTime from '../../utils/youtube-time';
 const {computed, observer, ObjectProxy} = Ember;
 
 export default Ember.Controller.extend({
-  queryParams: ['time'],
+  queryParams: ['time', 'autoplay'],
   time: null,
-
-  startSeconds: computed('time', function() {
-    const time = this.get('time');
-
-    if (time) {
-      return youtubeTime(time);
-    }
-
-    return undefined;
-  }),
+  autoplay: 0,
 
   proxiedQuestions: computed('questions', function() {
     return this.get('questions')
