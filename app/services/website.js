@@ -1,6 +1,7 @@
 import Ember from 'ember';
 const {$, inject: {service}, RSVP} = Ember;
 const url = 'http://www.accursedfarms.com/';
+const proxy = '//cors-anywhere.herokuapp.com/';
 
 export default Ember.Service.extend({
   ajax: service(),
@@ -29,8 +30,8 @@ export default Ember.Service.extend({
 
   _fetch() {
     return new RSVP.Promise((res, rej) => {
-      $.getJSON('//whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?', data => {
-        res(data.contents);
+      $.ajax(proxy + url).then(data => {
+        res(data);
       }).catch(e => {
         rej(e);
       });
