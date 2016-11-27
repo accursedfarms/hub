@@ -14,4 +14,11 @@ export default Ember.Route.extend({
     const questions = this.get('questionsService').getQuestionsForVideo(model.videoId);
     controller.set('questions', questions);
   },
+
+  resetController(controller, isExiting) {
+    if (isExiting) {
+      controller.set('time', null);
+      controller.set('autoplay', 0);
+    }
+  },
 });

@@ -1,4 +1,8 @@
 export default function youtubeTime(time) {
+  if (!time) {
+    return time;
+  }
+
   const ret = time.match(/(?:(\d+)h)?(?:(\d+)m)?(\d+)s/);
 
   const hours = ret[1] || 0;
