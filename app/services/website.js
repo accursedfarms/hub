@@ -28,9 +28,11 @@ export default Ember.Service.extend({
   },
 
   _fetch() {
-    return new RSVP.Promise(suc => {
-      $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?', data => {
-        suc(data.contents);
+    return new RSVP.Promise((res, rej) => {
+      $.getJSON('//whateverorigin.org/get?url=' + encodeURIComponent(url) + '&callback=?', data => {
+        res(data.contents);
+      }).catch(e => {
+        rej(e);
       });
     });
   },

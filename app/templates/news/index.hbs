@@ -4,5 +4,9 @@
     <p>{{truncate post.text 300}}</p>
   </div>
 {{else}}
-  <h3>Loading fresh news, just a sec.</h3>
+  {{#if news.isPending}}
+    <h3>Loading fresh news, just a sec.</h3>
+  {{else if news.isRejected}}
+    <h3>Sorry, something is broken.</h3>
+  {{/if}}
 {{/each}}

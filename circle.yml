@@ -1,0 +1,30 @@
+machine:
+  node:
+    version: v7.2.0
+  pre:
+    - sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+dependencies:
+  cache_directories:
+    - /home/ubuntu/Treewer/bower_components
+    - /home/ubuntu/nvm/versions/node/v7.2.0/bin
+    - /home/ubuntu/nvm/versions/node/v7.2.0/lib/node_modules
+  pre:
+    - if [ ! -e /home/ubuntu/nvm/versions/node/v7.2.0/bin/ember ]; then npm install -g ember-cli@2.9.1; else echo "Ember cli 2.9.1 seems to be cached"; fi;
+    - if [ ! -e /home/ubuntu/nvm/versions/node/v7.2.0/bin/bower ]; then npm install -g bower; else echo "Bower seems to be cached"; fi;
+    - if [ ! -e /home/ubuntu/nvm/versions/node/v7.2.0/bin/eslint ]; then npm install -g eslint; else echo "ESLint seems to be cached"; fi;
+  override:
+    - npm install
+    - bower install
+test:
+  override:
+    - (grep -rP "[\S]+(  +)" ./app || exit 0 && exit 1;)
+    - eslint ./app/
+    - eslint ./tests/
+deployment:
+  master:
+    branch: master
+    commands:
+      - "ember build --prod"
+      - "git clone git@github.com:accursedfarms/accursedfarms.github.io.git ../website"
+      - "cp -R ./deploy ../website"
+      - "cd ../website && git commit -am 'build' && git push"

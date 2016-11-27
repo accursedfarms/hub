@@ -10,6 +10,13 @@ export default [
     playlist: 'PL6PNZBb6b9Ltgl6WM5rn2pjrXd_qdit2S',
   },
   {
+    name: 'Monthly Chats With Fans',
+    description: '',
+    thumbnail: 'https://i.ytimg.com/vi/wEREvKOJVoA/hqdefault.jpg',
+    playlist: 'PL6PNZBb6b9Luz66ffG_yiKmY_OcjEwJU5',
+    areQuestionVideos: true,
+  },
+  {
     name: 'Freeman\'s mind',
     description: '',
     thumbnail: 'https://i.ytimg.com/vi/5SQhfkpX9bc/hqdefault.jpg',
@@ -20,13 +27,6 @@ export default [
     description: civilProtectionDescription,
     thumbnail: 'https://i.ytimg.com/vi/SoaIZKTBXIM/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9Lsr6ZnEzRJ5FqBbSYI4rHFj',
-  },
-  {
-    name: 'Monthly Chats With Fans',
-    description: '',
-    thumbnail: 'https://i.ytimg.com/vi/wEREvKOJVoA/hqdefault.jpg',
-    playlist: 'PL6PNZBb6b9Luz66ffG_yiKmY_OcjEwJU5',
-    areQuestionVideos: true,
   },
   {
     name: 'Others',
