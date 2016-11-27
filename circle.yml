@@ -17,7 +17,6 @@ dependencies:
     - bower install
 test:
   override:
-    - (grep -rP "[\S]+(  +)" ./app || exit 0 && exit 1;)
     - eslint ./app/
     - eslint ./tests/
 deployment:
@@ -26,5 +25,8 @@ deployment:
     commands:
       - "ember build --prod"
       - "git clone git@github.com:accursedfarms/accursedfarms.github.io.git ../website"
-      - "cp -R ./deploy ../website"
-      - "cd ../website && git commit -am 'build' && git push"
+      - "cp -r ./dist/. ../website"
+      - "cd ../website"
+      - "git add ."
+      - "git commit -m 'build'"
+      - "git push"

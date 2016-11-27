@@ -28,7 +28,7 @@ export function httpDrop([text]) {
   }
 
   const snippet = text.substring(0, http);
-  const tail = reverseString(snippet).search(/[\.\?!]/);
+  const tail = reverseString(snippet).search(/[.?!]/);
   const cleanerText = snippet.substring(0, snippet.length - tail);
 
   return strReplaceMap(cleanerText, remove);
