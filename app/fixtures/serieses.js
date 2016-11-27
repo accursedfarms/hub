@@ -6,32 +6,32 @@ export default [
   {
     name: 'Ross\'s Game Dungeon',
     description: gameDungeonDescription,
-    thumbnail: 'http://www.accursedfarms.com/images/other/rgd_strife_th.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/w025kQRMZwA/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9Ltgl6WM5rn2pjrXd_qdit2S',
   },
   {
     name: 'Freeman\'s mind',
     description: '',
-    thumbnail: 'http://www.accursedfarms.com/wp-content/uploads/2010/10/ep028.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/5SQhfkpX9bc/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9LvDWpI-5CPYUxG1Rnm-vr9V',
   },
   {
     name: 'Civil protection',
     description: civilProtectionDescription,
-    thumbnail: 'http://www.accursedfarms.com/wp-content/uploads/2010/10/ep0051.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/SoaIZKTBXIM/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9Lsr6ZnEzRJ5FqBbSYI4rHFj',
   },
   {
     name: 'Monthly Chats With Fans',
     description: '',
-    thumbnail: 'http://www.accursedfarms.com/images/other/rossrants3d_th.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/wEREvKOJVoA/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9Luz66ffG_yiKmY_OcjEwJU5',
     areQuestionVideos: true,
   },
   {
     name: 'Others',
     description: othersDescription,
-    thumbnail: 'http://www.accursedfarms.com/images/other/rossrants3d_th.jpg',
+    thumbnail: 'https://i.ytimg.com/vi/jwYKyhwPWug/hqdefault.jpg',
     playlist: 'PL6PNZBb6b9Lv3ZUSQvvtATkSlSXlZY6Oi',
   },
 ];
