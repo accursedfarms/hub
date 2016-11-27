@@ -5,8 +5,13 @@ import youtubeTime from '../utils/youtube-time';
 const {computed} = Ember;
 
 export default Ember.Service.extend({
+  isQuestionVideo(videoId) {
+    return !!this.getObjectForVideo(videoId);
+  },
+
   getObjectForVideo(videoId) {
-    return this.get('questions').find(question => question.batch.videoId === videoId).batch;
+    const questions = this.get('questions').find(question => question.batch.videoId === videoId);
+    return questions ? questions.batch : {videoId};
   },
 
   getQuestionsForVideo(videoId) {

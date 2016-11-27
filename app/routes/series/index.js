@@ -9,6 +9,8 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, model) {
-    return this._super(controller, model.items.map(item => item.snippet));
+    this._super(controller, model.items.map(item => item.snippet));
+
+    controller.set('areQuestionVideos', this.modelFor('series').areQuestionVideos);
   },
 });

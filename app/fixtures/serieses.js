@@ -26,6 +26,7 @@ export default [
     description: '',
     thumbnail: 'http://www.accursedfarms.com/images/other/rossrants3d_th.jpg',
     playlist: 'PL6PNZBb6b9Luz66ffG_yiKmY_OcjEwJU5',
+    areQuestionVideos: true,
   },
   {
     name: 'Others',

@@ -1,5 +1,5 @@
 <div class="question-video text-center">
-  {{ember-youtube ytid='fWRISvgAygU' delegate=this delegate-as="player"}}
+  {{ember-youtube ytid=model.videoId delegate=this delegate-as="player" startSeconds=startSeconds}}
   <ul class="list-group">
     {{#each proxiedQuestions as |question|}}
       <li class="list-group-item {{if question.isActive 'active' 'inactive'}}" role="button" {{action 'seekTo' question.timeInSeconds target=player}}>
