@@ -1,15 +1,27 @@
 {{#each (chunk 3 (sort-by "publishedAt:desc" model)) as |row|}}
   <div class="row">
     {{#each row as |video|}}
-      <div class="col-md-4 portfolio-item">
-        <a href={{youtube-video video.resourceId.videoId}}>
-          <img class="img-responsive" src={{video.thumbnails.standard.url}}>
-        </a>
-        <h3>
-          <a href={{youtube-video video.resourceId.videoId}}>{{video.title}}</a>
-        </h3>
-        <p>{{http-drop video.description}}</p>
-      </div>
+      {{#if areQuestionVideos}}
+        <div class="col-md-4 portfolio-item">
+          {{#link-to 'questions.video' video.resourceId.videoId}}
+            <img class="img-responsive" src={{video.thumbnails.standard.url}}>
+          {{/link-to}}
+          <h3>
+            {{link-to video.title 'questions.video' video.resourceId.videoId}}
+          </h3>
+          <p>{{http-drop video.description}}</p>
+        </div>
+      {{else}}
+        <div class="col-md-4 portfolio-item">
+          <a href={{youtube-video video.resourceId.videoId}}>
+            <img class="img-responsive" src={{video.thumbnails.standard.url}}>
+          </a>
+          <h3>
+            <a href={{youtube-video video.resourceId.videoId}}>{{video.title}}</a>
+          </h3>
+          <p>{{http-drop video.description}}</p>
+        </div>
+      {{/if}}
     {{/each}}
   </div>
 {{/each}}

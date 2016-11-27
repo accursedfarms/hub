@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Questions in searchable form</h1>
+    {{input value=query}}
+  </div>
+
+  <div class="list-group">
+    {{#each questions as |question|}}
+      {{#link-to 'questions.video' question.batch.videoId (query-params time=question.time) class="list-group-item"}}
+        {{question.question}}
+      {{/link-to}}
+    {{/each}}
+  </div>
+</div>

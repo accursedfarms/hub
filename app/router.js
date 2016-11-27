@@ -10,7 +10,9 @@ Router.map(function() {
   this.route('news');
   this.route('series', {path: '/series/:playlist'}, () => {});
   this.route('serieses', {path: '/series'});
-  this.route('questions');
+  this.route('questions', function() {
+    this.route('video', {path: '/video/:video'});
+  });
 });
 
 export default Router;

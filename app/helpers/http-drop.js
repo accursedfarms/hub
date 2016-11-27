@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 const remove = [
   'Download the full game for free below!',
+  'www.accursedfarms.com',
 ];
 
 function reverseString(str) {
@@ -23,7 +24,7 @@ function strReplaceMap(text, filter) {
 export function httpDrop([text]) {
   const http = text.indexOf('http');
   if (http === -1) {
-    return text;
+    return strReplaceMap(text, remove);
   }
 
   const snippet = text.substring(0, http);
