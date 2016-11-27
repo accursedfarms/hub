@@ -20,7 +20,7 @@ module.exports = {
     ],
     "array-callback-return": "off",
     "arrow-body-style": [
-      "error",
+      "off",
       "as-needed"
     ],
     "arrow-parens": ["error", "as-needed"],

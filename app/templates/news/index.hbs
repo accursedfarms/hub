@@ -1,0 +1,6 @@
+{{#each model as |post|}}
+  <div>
+    <h2><a href={{post.url}}>{{post.title}}</a></h2>
+    <p>{{truncate post.text 300}}</p>
+  </div>
+{{/each}}

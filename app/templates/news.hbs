@@ -1,1 +1,34 @@
-{{outlet}}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      {{outlet}}
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <h3>Ross's game dungeon</h3>
+        <div>
+          should be here
+          <strong>
+            {{moment-from-now nextGameDungeon hideSuffix=false}}
+          </strong>
+        </div>
+        <div>
+          you can watch last one in the meantime
+        </div>
+      </div>
+
+      <div>
+        <h3>Monthly Chats With Fans</h3>
+        <div>
+          should be
+          <strong>
+            {{moment nextVideoChat}}
+          </strong>
+        </div>
+        <div>
+          you can watch last one in the meantime
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
