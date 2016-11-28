@@ -12,9 +12,15 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li>{{link-to 'News' 'news'}}</li>
-          <li>{{link-to 'Series' 'serieses'}}</li>
-          <li>{{link-to 'Questions' 'questions'}}</li>
+          {{#active-link}}
+            {{link-to 'News' 'news'}}
+          {{/active-link}}
+          {{#active-link}}
+            {{link-to 'Series' 'serieses'}}
+          {{/active-link}}
+          {{#active-link}}
+            {{link-to 'Questions' 'questions'}}
+          {{/active-link}}
         </ul>
       </div>
     </div>
