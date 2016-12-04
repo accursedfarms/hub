@@ -1,9 +1,9 @@
 import moment from 'moment';
 
 const chatDates = [
-  '2016-12-04 16:00-05',
-  '2017-01-01 16:00-05',
-  '2017-02-05 16:00-05',
+  '2016-12-03 16:00-05',
+  '2017-01-07 16:00-05',
+  '2017-02-04 16:00-05',
 ];
 
 export default function nextChatFromDate(date) {
