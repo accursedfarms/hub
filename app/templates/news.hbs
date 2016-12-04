@@ -9,7 +9,9 @@
         <div>
           should be here
           <strong>
-            {{moment-from-now nextGameDungeon hideSuffix=false}}
+            {{#if nextGameDungeon.isFulfilled}}
+              {{moment-from-now nextGameDungeon.content hideSuffix=false}}
+            {{/if}}
           </strong>
         </div>
         <div>
