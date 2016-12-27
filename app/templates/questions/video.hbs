@@ -8,11 +8,20 @@
         playerVars=(hash autoplay=autoplay)
         width=888 height=500}}
   </div>
-  <ul class="list-group">
+  <table style="width: 888px; margin: 0 auto;" class="table">
+    <thead>
+    <tr>
+      <td style="text-align: left;">Question</td>
+      <td style="text-align: center;">Time</td>
+    </tr>
+    </thead>
+    <tbody>
     {{#each proxiedQuestions as |question|}}
-      <li class="list-group-item {{if question.isActive 'active' 'inactive'}}" role="button" {{action 'seekTo' question.timeInSeconds target=player}}>
-        {{question.question}} <span class="small">({{question.time}})</span>
-      </li>
+      <tr class="{{if question.isActive 'active' 'inactive'}}" role="button" {{action 'seekTo' question.timeInSeconds target=player}}>
+        <td style="text-align: left;" title="{{question.question}}">{{truncate question.question 120}}</td>
+        <td style="text-align: center;">{{question.time}}</td>
+      </tr>
     {{/each}}
-  </ul>
+    </tbody>
+  </table>
 </div>

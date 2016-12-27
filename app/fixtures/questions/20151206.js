@@ -13,5 +13,6 @@ export default {
     {question: 'What about the movie? Can you say anything about it?', time: '18m52s'},
     {question: 'Have you ever considered getting a sponsor, like Amazon affiliate link?', time: '19m57s'},
     {question: 'Did you do the entirety of the episodes yourself or are some of them user contributed?', time: '21m12s'},
+    {question: 'Any plans for Freeman\'s Mind mugs?', time: '22m15s'},
   ],
 };
