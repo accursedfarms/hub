@@ -10,6 +10,7 @@ module.exports = {
   },
   "globals": {
     "Cookies": true,
+    "ga": true,
     "autosize": true
   },
   "rules": {
