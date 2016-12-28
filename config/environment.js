@@ -48,6 +48,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-89524058-1'
+    };
   }
 
   return ENV;
